@@ -1,0 +1,129 @@
+<PaginaRgcpfPage>:
+    FloatLayout:
+        GridLayout:
+            rows: 1
+            pos_hint: {"right": 0.85, "top": 1}
+            size_hint: 0.7, 0.15
+            ImageButton:
+                size_hint: 0.25, 0.1
+                source: "icones/rg-cpf-cnh.PNG"
+            LabelButton:
+                text: "[color=#000000]Identidades pessoais[/color]"
+                bold: True
+                markup: True
+        # Identidades pessoais - RG
+        FloatLayout:
+            pos_hint: {"right": 0.98, "top": 0.9}
+            size_hint: 0.95, 0.6
+            ImageButton:
+                pos_hint: {"right": 0.2, "top": .9}
+                size_hint: 0.2, 0.2
+                source: "icones/rg-cpf-cnh.png"
+                on_release: app.mudar_tela("paginargcpf")
+            LabelButton:
+                text_size: self.size
+                halign: 'right'
+                valign: 'middle'
+                pos_hint: {"right": 0.45, "top": 0.9}
+                size_hint: 0.3, 0.3
+                text: "[size=14][color=#808080]RG (Registro Geral)[/color][/size]"
+                bold: True
+                markup: True
+                on_release: app.mudar_tela("paginargcpf")
+
+            LabelButton:
+                text_size: self.size
+                halign: 'right'
+                valign: 'middle'
+                pos_hint: {"right": 0.8, "top": 0.9}
+                size_hint: 0.3, 0.3
+                text: "[color=#000000]#RG[/color]"
+                on_release: app.mudar_tela("paginargcpf")
+                bold: True
+                markup: True
+            ImageButton:
+                pos_hint: {"right": 0.98, "top": .85}
+                size_hint: 0.1, 0.1
+                source: "icones/foto_perfil.png"
+                on_release: app.mudar_tela("paginargcpf")
+
+            # Identidades pessoais - CPF
+            ImageButton:
+                pos_hint: {"right": 0.2, "top": 0.5}
+                size_hint: 0.2, 0.2
+                source: "icones/CPF.png"
+                on_release: app.mudar_tela("paginargcpf")
+            LabelButton:
+                text_size: self.size
+                halign: 'right'
+                valign: 'middle'
+                pos_hint: {"right": 0.45, "top": 0.5}
+                size_hint: 0.3, 0.3
+                text: "[size=14][color=#808080]CNH (Carteira Nacional de Habilitação)[/color][/size]"
+                bold: True
+                markup: True
+                on_release: app.mudar_tela("paginargcpf")
+            LabelButton:
+                text_size: self.size
+                halign: 'right'
+                valign: 'middle'
+                pos_hint: {"right": 0.8, "top": 0.5}
+                size_hint: 0.3, 0.3
+                text: "[color=#000000]#CPF[/color]"
+                bold: True
+                markup: True
+                on_release: app.mudar_tela("paginargcpf")
+            ImageButton:
+                pos_hint: {"right": 0.98, "top": .45}
+                size_hint: 0.1, 0.1
+                source: "icones/foto_perfil.png"
+                on_release: app.mudar_tela("paginargcpf")
+
+            # Identidades pessoais - CNH
+            ImageButton:
+                pos_hint: {"right": 0.2, "top": 0.12}
+                size_hint: 0.2, 0.2
+                source: "icones/CNH.png"
+                on_release: app.carregar_todas_vendas()
+            LabelButton:
+                text_size: self.size
+                halign: 'right'
+                valign: 'middle'
+                pos_hint: {"right": 0.45, "top": 0.12}
+                size_hint: 0.3, 0.3
+                text: "[size=14][color=#808080]CNH (Carteira Nacional de Habilitação)[/color][/size]"
+                bold: True
+                markup: True
+                on_release: app.carregar_todas_vendas()
+            LabelButton:
+                text_size: self.size
+                halign: 'right'
+                valign: 'middle'
+                pos_hint: {"right": 0.8, "top": 0.12}
+                size_hint: 0.3, 0.3
+                text: "[size=14][color=#000000]#CNH[/color][/size]"
+                bold: True
+                markup: True
+                on_release: app.carregar_todas_vendas()
+            ImageButton:
+                pos_hint: {"right": 0.98, "top": 0.07}
+                size_hint: 0.1, 0.1
+                source: "icones/foto_perfil.png"
+                on_release: app.mudar_tela("paginargcpf")
+
+        # botao voltar
+        FloatLayout:
+            pos_hint: {"right": 1, "top": 0.12}
+            size_hint: 1, 0.12
+            canvas:
+                Color:
+                    rgb: utils.get_color_from_hex("#F85F6A")
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            ImageButton:
+                pos_hint: {"right": 0.2, "top": 0.9}
+                size_hint: 0.2, 0.8
+                source: "icones/voltar.png"
+                on_release: app.mudar_tela("homepage")
+

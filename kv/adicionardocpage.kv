@@ -1,0 +1,99 @@
+<AdicionarDocPage>:
+    FloatLayout:
+        canvas:
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: "icones/bg1.png"
+
+        # selecionar cliente
+        Label:
+            pos_hint: {"right": 1, "top": 1}
+            size_hint: 1, 0.05
+            text: "[color=#808080]Selecione o tipo de documento[/color]"
+            markup: True
+            id: label_selecione_cliente
+        ScrollView:
+            pos_hint: {"right": 1, "top": 0.95}
+            size_hint: 1, 0.15
+            GridLayout:
+                rows: 1
+                id: lista_clientes
+                size_hint_x: None
+                width: self.minimum_width
+                col_default_width: "100dp"
+                col_force_default: True
+
+        #selecionar produto
+        Label:
+            pos_hint: {"right": 1, "top": 0.75}
+            size_hint: 1, 0.05
+            text: "[color=#808080]Selecione o Documento[/color]"
+            markup: True
+            id: label_selecione_produto
+        ScrollView:
+            pos_hint: {"right": 1, "top": 0.7}
+            size_hint: 1, 0.15
+            GridLayout:
+                rows: 1
+                id: lista_produtos
+                size_hint_x: 0.4
+                width: self.minimum_width
+                col_default_width: "100dp"
+                col_force_default: True
+        Label:
+            id: label_data
+            pos_hint: {"right": 1, "top": 0.5}
+            size_hint: 1, 0.05
+            bold: True
+            text: "Data: 01/01/2021"
+
+        # botoes
+        LabelButton:
+            canvas.before:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+                    source: "icones/botao.png" if self.state == "normal" else "icones/botao_apertado.png"
+            on_release: app.mudar_tela("homepage")
+            text_size: self.size
+            halign: 'center'
+            valign: 'middle'
+            text: "Cancelar"
+            pos_hint: {"right": 0.45, "top": 0.2}
+            size_hint: 0.35, 0.1
+        LabelButton:
+            canvas.before:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+                    source: "icones/botao.png" if self.state == "normal" else "icones/botao_apertado.png"
+            on_release: app.adicionar_venda()
+            text_size: self.size
+            halign: 'center'
+            valign: 'middle'
+            text: "Adicionar Documento"
+            pos_hint: {"right": 0.85, "top": 0.2}
+            size_hint: 0.35, 0.1
+
+
+        # Digitar o numero do documento
+        GridLayout:
+            rows: 1
+            pos_hint: {"right": 0.9, "top": 0.35}
+            size_hint: 1, 0.075
+            Label:
+                text_size: self.size
+                halign: 'center'
+                valign: 'middle'
+                text: "[color=#808080]Nº documento[/color]"
+                id: label_preco
+                markup: True
+            TextInput:
+                text_size: self.size
+                halign: 'center'
+                valign: 'middle'
+                id: preco_total
+                hint_text: "Digite apenas números"
+
+

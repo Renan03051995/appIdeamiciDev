@@ -1,0 +1,75 @@
+#:include kv/homepage.kv
+#:include kv/ajustespage.kv
+#:include kv/adicionardocpage.kv
+#:include kv/listarvendedorespage.kv
+#:include kv/fotoperfilpage.kv
+#:include kv/adicionarvendedorpage.kv
+#:include kv/paginargcpf.kv
+#:include kv/paginacarteirinhae.kv
+#:include kv/paginainfomedicas.kv
+#:include kv/paginaavisoimportantes.kv
+
+#:include kv/todasvendaspage.kv
+#:include kv/loginpage.kv
+#:include kv/vendasoutrovendedorpage.kv
+#:import utils kivy.utils
+
+FloatLayout:
+    canvas:
+        Color:
+            rgb: utils.get_color_from_hex("#ffffff")
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    Image:
+        pos_hint: {"rigth":1, "top":0.95}
+        size_hint: 1, 0.2
+        source: "icones/hash.png"
+        id: foto_perfil
+    ScreenManager:
+        pos_hint:{"right":1, "top":0.75}
+        size_hint: 1, 0.7
+        id: screen_manager
+        LoginPage:
+            name: "loginpage"
+            id: loginpage
+        HomePage:
+            name: "homepage"
+            id: homepage
+        PaginaRgcpfPage:
+            name: "paginargcpf"
+            id: paginargcpf
+        PaginaCarteirinhaePage:
+            name: "paginacarteirinhaepage"
+            id: paginacarteirinhaepage
+        PaginaInfoMedicasPage:
+            name: "paginainfomedicaspage"
+            id: paginainfomedicaspage
+        PaginaAvisosImportantesPage:
+            name: "paginaavisosimportantespage"
+            id: paginaavisosimportantespage
+        AjustesPage:
+            name: "ajustespage"
+            id: ajustespage
+        AdicionarDocPage:
+            name: "adicionardocpage"
+            id: adicionardocpage
+        AdicionarVendedorPage:
+            name: "adicionarvendedorpage"
+            id: adicionarvendedorpage
+        ListarVendedoresPage:
+            name: "listarvendedorespage"
+            id: listarvendedorespage
+        FotoPerfilPage:
+            name: "fotoperfilpage"
+            id: fotoperfilpage
+
+
+
+        TodasVendasPage:
+            name: "todasvendaspage"
+            id: todasvendaspage
+        VendasOutroVendedorPage:
+            name: "vendasoutrovendedorpage"
+            id: vendasoutrovendedorpage
+

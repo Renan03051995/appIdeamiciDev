@@ -1,0 +1,126 @@
+<HomePage>:
+    FloatLayout:
+        canvas:
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: "icones/bg1.png"
+        Label:
+            pos_hint: {"right": 0.85, "top": 1}
+            size_hint: 0.7, 0.15
+            text: "Seu ID único: 1"
+            id: label_total_vendas
+            markup: True
+
+        #########Botoes Homepage##########
+        FloatLayout:
+        # RG, CPF, CNH
+        ImageButton:
+            pos_hint: {"right": 0.4, "top": 0.85}
+            size_hint: 0.5, 0.15
+            source: "icones/rg-cpf-cnh.PNG"
+            on_release: app.mudar_tela("paginargcpf")
+        LabelButton:
+            pos_hint: {"right": 0.9, "top": 0.85}
+            size_hint: 0.5, 0.15
+            text: "[color=#000000]RG, CPF, CNH[/color]"
+            bold: True
+            on_release: app.mudar_tela("paginargcpf")
+            markup: True
+
+        # Carteirinha de estudante
+        ImageButton:
+            pos_hint: {"right": 0.4, "top": 0.7}
+            size_hint: 0.5, 0.15
+            source: "icones/carteirinha_estudante.PNG"
+            on_release: app.mudar_tela("paginacarteirinhaepage")
+
+            ##on_release: app.mudar_tela("adicionarvendedorpage")
+        LabelButton:
+            pos_hint: {"right": 0.9, "top": 0.7}
+            size_hint: 0.5, 0.15
+            text: "[color=#000000]Carteirinha de estudante[/color]"
+            bold: True
+            markup: True
+            on_release: app.mudar_tela("paginacarteirinhaepage")
+            ##          on_release: app.mudar_tela("adicionarvendedorpage")
+
+        # Informações médicas
+        ImageButton:
+            pos_hint: {"right": 0.4, "top": 0.55}
+            size_hint: 0.5, 0.15
+            source: "icones/info_medicas.png"
+            on_release: app.mudar_tela("paginainfomedicaspage")
+            ##            on_release: app.carregar_todas_vendas()
+        LabelButton:
+            pos_hint: {"right": 0.9, "top": 0.55}
+            size_hint: 0.5, 0.15
+            text: "[color=#000000]Informações médicas[/color]"
+            markup: True
+            bold: True
+            on_release: app.mudar_tela("paginainfomedicaspage")
+            ##            on_release: app.carregar_todas_vendas()
+
+
+        # Avisos importantes
+        ImageButton:
+            pos_hint: {"right": 0.4, "top": 0.4}
+            size_hint: 0.5, 0.15
+            source: "icones/info_importantes.png"
+            on_release: app.mudar_tela("paginaavisosimportantespage")
+            ##          on_release: app.carregar_todas_vendas()
+        LabelButton:
+            pos_hint: {"right": 0.9, "top": 0.4}
+            size_hint: 0.5, 0.15
+            text: "[color=#000000]Avisos importantes[/color]"
+            markup: True
+            bold:True
+            on_release: app.mudar_tela("paginaavisosimportantespage")
+            ##          on_release: app.carregar_todas_vendas()
+
+
+
+
+
+
+
+
+
+
+        #Lista de vendas
+        #ScrollView:
+            #pos_hint: {"right": 1, "top": 0.75}
+            #size_hint: 1, 0.63
+            #GridLayout:
+             #   cols: 1
+              #  id: lista_vendas
+               # size_hint_y: None
+                #spacing: 2, 2
+                #height: self.minimum_height
+                #row_default_height: "90dp"
+                #row_force_default: True
+
+
+
+
+
+        #3 Botoes Homepage
+        GridLayout:
+            rows: 1
+            pos_hint: {"right": 1, "top": 0.12}
+            size_hint: 1, 0.12
+            canvas:
+                Color:
+                    rgb: utils.get_color_from_hex("#F85F6A")
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            ImageButton:
+                source: "icones/adicionar_vendedor.png"
+                on_release: app.mudar_tela("adicionardocpage")
+            ImageButton:
+                source: "icones/salesman.png"
+                on_release: app.mudar_tela("listarvendedorespage")
+            ImageButton:
+                source: "icones/settings.png"
+                on_release: app.mudar_tela("ajustespage")

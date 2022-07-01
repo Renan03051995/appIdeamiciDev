@@ -1,0 +1,43 @@
+<PaginaAvisosImportantesPage>:
+    FloatLayout:
+        GridLayout:
+            rows: 1
+            pos_hint: {"right": 0.85, "top": 1}
+            size_hint: 0.7, 0.15
+            ImageButton:
+                size_hint: 0.25, 0.1
+                source: "icones/info_importantes.PNG"
+            LabelButton:
+                text: "[color=#000000]Informações importantes[/color]"
+                bold: True
+                markup: True
+
+
+        GridLayout:
+            rows: 1
+            pos_hint: {"right": 0.98, "top": 0.8}
+            size_hint: 0.95, 0.6
+
+            TextInput:
+                text_size: self.size
+                halign: 'center'
+                valign: 'middle'
+                id: preco_total
+                hint_text: "Digite avisos importantes aqui"
+
+        # botao voltar
+        FloatLayout:
+            pos_hint: {"right": 1, "top": 0.12}
+            size_hint: 1, 0.12
+            canvas:
+                Color:
+                    rgb: utils.get_color_from_hex("#F85F6A")
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            ImageButton:
+                pos_hint: {"right": 0.2, "top": 0.9}
+                size_hint: 0.2, 0.8
+                source: "icones/voltar.png"
+                on_release: app.mudar_tela("homepage")
+
