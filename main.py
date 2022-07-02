@@ -144,32 +144,6 @@ class MainApp(App):
 
         self.mudar_tela("homepage")
 
-    def adicionar_vendedor(self, id_vendedor_adicionado):
-        link = f'https://aplicativovendashash-155c4-default-rtdb.firebaseio.com/.json?orderBy="id_vendedor"&equalTo="{id_vendedor_adicionado}"'
-        requisicao = requests.get(link)
-        requisicao_dic = requisicao.json()
-
-        pagina_adicionarvendedor = self.root.ids["adicionarvendedorpage"]
-        mensagem_texto = pagina_adicionarvendedor.ids["mensagem_outrovendedor"]
-
-        if requisicao_dic == {}:
-            mensagem_texto.text = "Usuário não encontrado"
-        else:
-            equipe = self.equipe.split(",")
-            if id_vendedor_adicionado in equipe:
-                mensagem_texto.text = "Vendedor já faz parte da equipe"
-            else:
-                self.equipe = self.equipe + f",{id_vendedor_adicionado}"
-                info = f'{{"equipe": "{self.equipe}"}}'
-                requests.patch(f"https://aplicativovendashash-155c4-default-rtdb.firebaseio.com/{self.local_id}.json?auth={self.id_token}",
-                               data=info)
-                mensagem_texto.text = "Vendedor Adicionado com Sucesso"
-                # adicionar um novo banner na lista de vendedores
-                pagina_listavendedores = self.root.ids["listarvendedorespage"]
-                lista_vendedores = pagina_listavendedores.ids["lista_vendedores"]
-                banner_vendedor = BannerVendedor(id_vendedor=id_vendedor_adicionado)
-                lista_vendedores.add_widget(banner_vendedor)
-
     def selecionar_cliente(self, foto, *args):
         self.cliente = foto.replace(".png", "")
         # pintar de branco todas as outras letras
@@ -229,10 +203,6 @@ class MainApp(App):
             pagina_adicionarvendas.ids["label_selecione_cliente"].color = (1, 0, 0, 1)
         if not produto:
             pagina_adicionarvendas.ids["label_selecione_produto"].color = (1, 0, 0, 1)
-        if not unidade:
-            pagina_adicionarvendas.ids["unidades_kg"].color = (1, 0, 0, 1)
-            pagina_adicionarvendas.ids["unidades_unidades"].color = (1, 0, 0, 1)
-            pagina_adicionarvendas.ids["unidades_litros"].color = (1, 0, 0, 1)
         if not preco:
             pagina_adicionarvendas.ids["label_preco"].color = (1, 0, 0, 1)
         else:
@@ -240,13 +210,6 @@ class MainApp(App):
                 preco = float(preco)
             except:
                 pagina_adicionarvendas.ids["label_preco"].color = (1, 0, 0, 1)
-        if not quantidade:
-            pagina_adicionarvendas.ids["label_quantidade"].color = (1, 0, 0, 1)
-        else:
-            try:
-                quantidade = float(quantidade)
-            except:
-                pagina_adicionarvendas.ids["label_quantidade"].color = (1, 0, 0, 1)
 
         # dado que ele preencheu tudo, vamos executar o código de adicionar venda
         if cliente and produto and unidade and preco and quantidade and (type(preco) == float) and (type(quantidade)==float):
