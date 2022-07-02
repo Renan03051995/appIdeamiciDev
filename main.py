@@ -144,6 +144,7 @@ class MainApp(App):
 
         self.mudar_tela("homepage")
 
+
     def selecionar_cliente(self, foto, *args):
         self.cliente = foto.replace(".png", "")
         # pintar de branco todas as outras letras
