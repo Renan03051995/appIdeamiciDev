@@ -19,7 +19,7 @@
                 pos_hint: {"right": 0.2, "top": .9}
                 size_hint: 0.2, 0.2
                 source: "icones/alergias.png"
-                on_release: app.mudar_tela("paginargcpf")
+
             LabelButton:
                 text_size: self.size
                 halign: 'right'
@@ -29,7 +29,7 @@
                 text: "[color=#808080]Alergias[/color]"
                 bold: True
                 markup: True
-                on_release: app.mudar_tela("paginargcpf")
+
 
             LabelButton:
                 text_size: self.size
@@ -38,21 +38,21 @@
                 pos_hint: {"right": 0.8, "top": 0.9}
                 size_hint: 0.3, 0.3
                 text: "[color=#000000]#Alergias[/color]"
-                on_release: app.mudar_tela("paginargcpf")
+
                 bold: True
                 markup: True
             ImageButton:
                 pos_hint: {"right": 0.98, "top": .85}
                 size_hint: 0.1, 0.1
-                source: "icones/foto_perfil.png"
-                on_release: app.mudar_tela("paginargcpf")
+                source: "icones/adicionar_vendedor.png"
+                on_release: app.mudar_tela("adicionardocpage")
 
             # Identidades pessoais - CPF
             ImageButton:
                 pos_hint: {"right": 0.2, "top": 0.5}
                 size_hint: 0.2, 0.2
                 source: "icones/tipo_sanguineo.png"
-                on_release: app.mudar_tela("paginargcpf")
+
             LabelButton:
                 text_size: self.size
                 halign: 'right'
@@ -62,7 +62,7 @@
                 text: "[color=#808080]Tipo sanguíneo[/color]"
                 bold: True
                 markup: True
-                on_release: app.mudar_tela("paginargcpf")
+
             LabelButton:
                 text_size: self.size
                 halign: 'right'
@@ -72,19 +72,19 @@
                 text: "[color=#000000]#Tipo sanguineo[/color]"
                 bold: True
                 markup: True
-                on_release: app.mudar_tela("paginargcpf")
+
             ImageButton:
                 pos_hint: {"right": 0.98, "top": .45}
                 size_hint: 0.1, 0.1
-                source: "icones/foto_perfil.png"
-                on_release: app.mudar_tela("paginargcpf")
+                source: "icones/adicionar_vendedor.png"
+                on_release: app.mudar_tela("adicionardocpage")
 
             # Identidades pessoais - CNH
             ImageButton:
                 pos_hint: {"right": 0.2, "top": 0.12}
                 size_hint: 0.2, 0.2
                 source: "icones/vacinas.png"
-                on_release: app.carregar_todas_vendas()
+
             LabelButton:
                 text_size: self.size
                 halign: 'right'
@@ -94,7 +94,7 @@
                 text: "[color=#808080]Vacinas[/color]"
                 bold: True
                 markup: True
-                on_release: app.carregar_todas_vendas()
+
             LabelButton:
                 text_size: self.size
                 halign: 'right'
@@ -104,12 +104,12 @@
                 text: "[color=#000000]#Vacinas[/color]"
                 bold: True
                 markup: True
-                on_release: app.carregar_todas_vendas()
+
             ImageButton:
                 pos_hint: {"right": 0.98, "top": 0.07}
                 size_hint: 0.1, 0.1
-                source: "icones/foto_perfil.png"
-                on_release: app.mudar_tela("paginargcpf")
+                source: "icones/adicionar_vendedor.png"
+                on_release: app.mudar_tela("adicionardocpage")
 
         # botao voltar
         FloatLayout:

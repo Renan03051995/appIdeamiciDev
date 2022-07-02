@@ -19,7 +19,7 @@
                 pos_hint: {"right": 0.2, "top": .85}
                 size_hint: 0.2, 0.2
                 source: "icones/carteirinha_estudante.png"
-                on_release: app.mudar_tela("paginargcpf")
+
             LabelButton:
                 text_size: cm(2.5), cm(2)
                 halign: 'right'
@@ -29,7 +29,7 @@
                 text: "[color=#808080]Carterinha de estudante Código:[/color]"
                 bold: True
                 markup: True
-                on_release: app.mudar_tela("paginargcpf")
+
             LabelButton:
                 text_size: self.size
                 halign: 'right'
@@ -37,14 +37,14 @@
                 pos_hint: {"right": 0.8, "top": 0.9}
                 size_hint: 0.3, 0.3
                 text: "[color=#000000]#Código[/color]"
-                on_release: app.mudar_tela("paginargcpf")
+
                 bold: True
                 markup: True
             ImageButton:
                 pos_hint: {"right": 0.98, "top": .8}
                 size_hint: 0.1, 0.1
-                source: "icones/foto_perfil.png"
-                on_release: app.mudar_tela("paginargcpf")
+                source: "icones/adicionar_vendedor.png"
+                on_release: app.mudar_tela("adicionardocpage")
 
 
         # botao voltar

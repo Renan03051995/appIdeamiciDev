@@ -25,10 +25,6 @@ class AdicionarVendedorPage(Screen):
     pass
 
 
-class TodasVendasPage(Screen):
-    pass
-
-
 class LoginPage(Screen):
     pass
 
